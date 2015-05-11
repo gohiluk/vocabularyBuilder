@@ -24,28 +24,28 @@
 </head>
 <body>
 
-<div style="background-image: url(<@spring.url '/resources/img/kindle1.png' />)"></div>
 
-<div>
-    <img src="<@spring.url '/resources/img/kindle1.png' />" />
+<div style="width:100%; height:46px; color:white">
+    <img src="<@spring.url '/resources/img/owl2.jpg'/>" style="width:35px; height:38px; margin-left:140px; margin-top:3px" />
+    <button id="showmenu" class="btn btn-success" style="height:46px; float:right; margin-top:0px; width:100px">Menu
+    </button>
 </div>
 
-<div>
-    <img src="<@spring.url '/resources/img/kindle2.png' />" />
-</div>
-
-<div>
-    <img src="<@spring.url '/resources/img/kindle3.png' />" />
-</div>
-
-<textarea id="textarea2"style="margin: 0px; width: 300px; height: 300px; float:left">
+<textarea id="textarea2"style="margin: 0px; width: 200px; height: 100px; float:left">
     You will see here translation
 </textarea>
 
-<textarea id="textarea" style="margin: 0px; width: 659px; height: 670px; float:left">
+<textarea id="textarea">
     Double click on word which you want to translate
 </textarea>
 
+<div class="menu">
+    <ul class="navigator">
+        <li><a>Coffee</a></li>
+        <li><a>Tea</a></li>
+        <li><a>Milk</a></li>
+    </ul>
+</div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

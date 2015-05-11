@@ -1,0 +1,91 @@
+html {
+    background: transparent url('../img/ksiazka2.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#textarea {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -500px;
+    width: 1000px;
+    height: 200px;
+
+    color:#666;
+    font-size:14px;
+    -moz-border-radius: 8px; -webkit-border-radius: 8px;
+    border:#999 1px solid;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding:10px;
+
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+}
+
+
+#textarea:focus{
+    color:#000;
+    outline:none;
+    border:#35a5e5 5px solid;
+
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.menu {
+    position: fixed;
+    top: 46px;
+    width:100px;
+    height:100%;
+    right: -10%;
+    background-color: white;
+    color: #5cb85c;
+}
+
+#navigation {
+    border-left:1px solid #999;
+    width:145px;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+li {
+    margin-bottom: 50px;
+    width: 100px;
+    text-align: center;
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#navigation a  {
+  display:block;
+  height:47px;
+  text-indent:-9000px;
+}
