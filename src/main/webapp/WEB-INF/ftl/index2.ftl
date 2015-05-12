@@ -50,5 +50,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <script src="<@spring.url '/resources/js/vocabulary.js' />"></script>
+<script src="<@spring.url '/resources/js/jjenglish.js' />"></script>
+
+
+
+<div id="modaljjenglish" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">This feature allows you to create groups in jjenglish</h4>
+            </div>
+            <div class="modal-body">
+                <h1>How many groups you want to create?</h1>
+                <button id="btnOne" class="btn btn-success" disabled>1</button>
+                <button id="btnTwo" class="btn btn-warning" disabled>2</button>
+                <button id="btnThree" class="btn btn-danger" disabled>3</button>
+            </div>
+
+            <h3>Go to jjenglish</h3>
+        </div>
+    </div>
+</div>
+
 
 </html>

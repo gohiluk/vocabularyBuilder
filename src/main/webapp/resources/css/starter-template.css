@@ -111,9 +111,15 @@ div.translatearea {
 }
 
 div.jjenglish {
-    width:50px;
-    height:50px;
-    background-color: red;
-    position: relative;
-    margin-top:20px;
+    width:125px;
+    height:125px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background-size: cover;
+    background-image: url('../img/logojjenglish.png');
+}
+
+div.jjenglish:hover {
+    cursor: pointer;
 }
