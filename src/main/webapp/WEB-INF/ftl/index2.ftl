@@ -31,13 +31,11 @@
     </button>
 </div>
 
-<textarea id="textarea2"style="margin: 0px; width: 200px; height: 100px; float:left">
-    You will see here translation
-</textarea>
-
 <textarea id="textarea">
     Double click on word which you want to translate
 </textarea>
+
+<div class="jjenglish"></div>
 
 <div class="menu">
     <ul class="navigator">
