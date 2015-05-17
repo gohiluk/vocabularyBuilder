@@ -40,7 +40,7 @@ $(document).ready(function() {
             $(".dziubek").fadeOut();
             $(".translatearea").fadeOut();
 
-            var positionX = $(this).position().left + 505; //500 polowa szerokosci textboxa
+            var positionX = $(this).position().left + 405; //500 polowa szerokosci textboxa
             var positionY =  e.pageY - 53; //46 wysokosc gornego diva
 
             var wholeText = $(this).val();
@@ -59,4 +59,11 @@ $(document).ready(function() {
         }
     });
 
+
+    $("#textarea").on('paste', function() {
+        $(this).animate({'top':'150px', 'margin-top':'0'},"slow");
+        setTimeout(function(){
+            $("#textarea").animate({'height':'300'},"slow");
+        }, 1000);
+    });
 });

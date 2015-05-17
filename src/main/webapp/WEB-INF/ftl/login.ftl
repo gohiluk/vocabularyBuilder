@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="<@spring.url '/resources/css/starter-template.css' />">
+    <link rel="stylesheet" type="text/css" href="<@spring.url '/resources/css/signin.css' />">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,17 +33,33 @@
     </button>
 </div>
 
-<textarea id="textarea" spellcheck="false">
-Double click on word which you want to translate
-</textarea>
 
-<@security.authorize access="hasRole('ROLE_USER')">
-<div class="jjenglish"></div>
-</@security.authorize>
+<div class="logindiv">
+
+    <form class="form-signin" action="<@spring.url '/j_spring_security_check' />" method="POST">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text"  name="j_username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password"  name="j_password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="hidden"
+               name="${_csrf.parameterName}"
+               value="${_csrf.token}"/>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div> <!-- /container -->
+
+
 
 <div class="menu">
     <ul class="navigator">
-        <li><a href="<@spring.url '/login'/>">Zaloguj</a></li>
+        <li><a>Zaloguj</a></li>
         <li><a>Zglos blad</a></li>
     </ul>
 </div>
@@ -53,28 +70,6 @@ Double click on word which you want to translate
 
 <script src="<@spring.url '/resources/js/vocabulary.js' />"></script>
 <script src="<@spring.url '/resources/js/jjenglish.js' />"></script>
-
-
-
-<div id="modaljjenglish" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">This feature allows you to create groups in jjenglish</h4>
-            </div>
-            <div class="modal-body">
-                <h1>How many groups you want to create?</h1>
-                <button id="btnOne" class="btn btn-success" disabled>1</button>
-                <button id="btnTwo" class="btn btn-warning" disabled>2</button>
-                <button id="btnThree" class="btn btn-danger" disabled>3</button>
-            </div>
-
-            <div class="tablesdiv"></div>
-            <h3>Send words to jjenglish</h3>
-        </div>
-    </div>
-</div>
 
 
 </html>
