@@ -20,7 +20,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         System.out.println("onAuthenticationSuccess");
-        redirectStrategy.sendRedirect(request, response, "index");
+        redirectStrategy.sendRedirect(request, response, "/index");
     }
 
     public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
