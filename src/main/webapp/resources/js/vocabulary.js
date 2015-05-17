@@ -63,7 +63,12 @@ $(document).ready(function() {
     $("#textarea").on('paste', function() {
         $(this).animate({'top':'150px', 'margin-top':'0'},"slow");
         setTimeout(function(){
-            $("#textarea").animate({'height':'300'},"slow");
+            var height = $(document).height();
+            var h = (height * 6)/10;
+            $("#textarea").animate({'height': h},"slow");
         }, 1000);
+        setTimeout(function(){
+            $("#textarea").animate({'height': '60%'},"slow");
+        }, 1100);
     });
 });
