@@ -33,12 +33,12 @@ html {
 #textarea:focus{
     color:#000;
     outline:none;
-    border:#35a5e5 5px solid;
+    border:#35a5e5 4px solid;
 
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    box-shadow: 0 0 4px rgba(81, 203, 238, 1);
+    -webkit-box-shadow: 0 0 4px rgba(81, 203, 238, 1);
+    -moz-box-shadow: 0 0 4px rgba(81, 203, 238, 1);
 }
 
 .menu {

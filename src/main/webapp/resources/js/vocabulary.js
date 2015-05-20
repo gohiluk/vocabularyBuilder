@@ -11,22 +11,25 @@ $(document).ready(function() {
                 var translation = data.matches[0].translation;
                 var result="";
 
-                //var div = $("<div style='width:20px; height:20px; background-color: red; margin-left:"+ positionX +"px; margin-top:"+ positionY +"px; position: fixed;'></div>");
                 var div = $("<div class='dziubek' style='margin-left:"+ positionX +"px; margin-top:"+ positionY +"px;'></div>");
                 div.appendTo(document.body);
-                //var div2 = $("<div style='width:200px; height:100px; background-color: white; margin-left:"+ (positionX+20) +"px; margin-top:"+ (positionY-10) +"px; position: fixed;'></div>");
-                var div2 = $("<div class='translatearea' style='margin-left:"+ (positionX+20) +"px; margin-top:"+ (positionY-10) +"px;'></div>");
+                var div2 = $("<div tabindex='-1' class='translatearea' style='margin-left:"+ (positionX+20) +"px; margin-top:"+ (positionY-10) +"px;'></div>");
+                div2.focusin(function() {
+                    clearTimeout(timeout);
+                });
                 div2.appendTo(document.body);
 
+                result = "<span class='glyphicon glyphicon-remove' aria-hidden='true' style='float:right; margin-right:-3px; margin-top:-3px'></span>";
                 for(var i=0; i<data.matches.length; i++) {
-                    //result += data.matches[i].translation + "\n";
                     result += data.matches[i].translation + "<br>";
-                    //$(".translatearea").val(result);
                     $(".translatearea").html(result);
                 }
 
                 div.fadeIn();
                 div2.fadeIn();
+                $("#glyphicon-remove").bind("click", function() {
+                   alert("remove");
+                });
             }
         });
     };
@@ -37,8 +40,12 @@ $(document).ready(function() {
 
         if (selectionStart !== selectionEnd) {
 
-            $(".dziubek").fadeOut();
-            $(".translatearea").fadeOut();
+            $(".dziubek").fadeOut("normal", function() {
+                $(this).remove();
+            });
+            $(".translatearea").fadeOut("normal", function() {
+                $(this).remove();
+            });
 
             var positionX = $(this).position().left + 405; //500 polowa szerokosci textboxa
             var positionY =  e.pageY - 53; //46 wysokosc gornego diva
@@ -61,6 +68,14 @@ $(document).ready(function() {
 
 
     $("#textarea").on('paste', function() {
+
+        $(".dziubek").fadeOut("normal", function() {
+            $(this).remove();
+        });
+        $(".translatearea").fadeOut("normal", function() {
+            $(this).remove();
+        });
+
         $(this).animate({'top':'150px', 'margin-top':'0'},"slow");
         setTimeout(function(){
             var height = $(document).height();
@@ -71,4 +86,23 @@ $(document).ready(function() {
             $("#textarea").animate({'height': '60%'},"slow");
         }, 1100);
     });
+
+    $("#textarea").focusout(function() {
+        fadeOutBubbleWithTimeout();
+    });
+
 });
+
+var timeout;
+var fadeOutBubbleWithTimeout = function() {
+
+    timeout = setTimeout(function() {
+        $(".dziubek").fadeOut("normal", function() {
+            $(this).remove();
+        });
+        $(".translatearea").fadeOut("normal", function() {
+            $(this).remove();
+        });
+    },3000)
+
+};
