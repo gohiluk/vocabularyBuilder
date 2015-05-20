@@ -8,25 +8,31 @@ $(document).ready(function() {
             url: url,
             dataType: 'json',
             success: function (data) {
-                var translation = data.matches[0].translation;
                 var result="";
 
-                var div = $("<div class='dziubek' style='margin-left:"+ positionX +"px; margin-top:"+ positionY +"px;'></div>");
-                div.appendTo(document.body);
-                var div2 = $("<div tabindex='-1' class='translatearea' style='margin-left:"+ (positionX+20) +"px; margin-top:"+ (positionY-10) +"px;'></div>");
-                div2.focusin(function() {
+                var divBeak = $("<div class='dziubek'></div>");
+                divBeak.css({'margin-left':positionX});
+                divBeak.css({'margin-top':positionY});
+                divBeak.css({'z-index':1});
+                divBeak.appendTo(document.body);
+                var divTranslateArea = $("<div tabindex='-1' class='translatearea'></div>");
+                divTranslateArea.css({'margin-left':(positionX+20)});
+                divTranslateArea.css({'margin-top':(positionY-10)});
+                divTranslateArea.css({'z-index':5});
+                divTranslateArea.focusin(function() {
                     clearTimeout(timeout);
                 });
-                div2.appendTo(document.body);
+                divTranslateArea.appendTo(document.body);
 
-                result = "<span class='glyphicon glyphicon-remove' aria-hidden='true' style='float:right; margin-right:-3px; margin-top:-3px'></span>";
+                result = "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>";
                 for(var i=0; i<data.matches.length; i++) {
-                    result += data.matches[i].translation + "<br>";
+                    //result += data.matches[i].translation + "<br>";
+                    result += "<div class='translatedWord'>" + data.matches[i].translation + "</div>";
                     $(".translatearea").html(result);
                 }
 
-                div.fadeIn();
-                div2.fadeIn();
+                divBeak.fadeIn();
+                divTranslateArea.fadeIn();
                 $("#glyphicon-remove").bind("click", function() {
                    alert("remove");
                 });
@@ -103,6 +109,6 @@ var fadeOutBubbleWithTimeout = function() {
         $(".translatearea").fadeOut("normal", function() {
             $(this).remove();
         });
-    },3000)
+    },1000)
 
 };

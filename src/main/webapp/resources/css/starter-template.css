@@ -127,3 +127,16 @@ div.jjenglish:hover {
     margin-right: 30px;
     margin-left:30px;
 }
+
+.glyphicon-remove {
+    float:right;
+    margin-right:-5px;
+    margin-top:-5px
+}
+
+div.translatedWord {
+    background-color: #35a5e5;
+    border-radius: 5px;
+    margin:5px;
+    padding: 3px;
+}
