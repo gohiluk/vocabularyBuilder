@@ -17,7 +17,7 @@ $(document).ready(function() {
                 divBeak.appendTo(document.body);
                 var divTranslateArea = $("<div tabindex='-1' class='translatearea'></div>");
                 divTranslateArea.css({'margin-left':(positionX+20)});
-                divTranslateArea.css({'margin-top':(positionY-10)});
+                divTranslateArea.css({'margin-top':(positionY-20)});
                 divTranslateArea.css({'z-index':5});
                 divTranslateArea.focusin(function() {
                     clearTimeout(timeout);
@@ -33,8 +33,8 @@ $(document).ready(function() {
 
                 divBeak.fadeIn();
                 divTranslateArea.fadeIn();
-                $("#glyphicon-remove").bind("click", function() {
-                   alert("remove");
+                $(".glyphicon-remove").bind("click", function() {
+                    fadeOutBubbleWithTimeout(0);
                 });
             }
         });
@@ -94,13 +94,13 @@ $(document).ready(function() {
     });
 
     $("#textarea").focusout(function() {
-        fadeOutBubbleWithTimeout();
+        fadeOutBubbleWithTimeout(1000);
     });
 
 });
 
 var timeout;
-var fadeOutBubbleWithTimeout = function() {
+var fadeOutBubbleWithTimeout = function(time) {
 
     timeout = setTimeout(function() {
         $(".dziubek").fadeOut("normal", function() {
@@ -109,6 +109,6 @@ var fadeOutBubbleWithTimeout = function() {
         $(".translatearea").fadeOut("normal", function() {
             $(this).remove();
         });
-    },1000)
+    },time)
 
 };

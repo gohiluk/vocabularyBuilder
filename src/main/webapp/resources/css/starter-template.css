@@ -104,7 +104,7 @@ div.translatearea {
     background-color: white;
     position: fixed;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px 10px 10px 10px;
     display: none;
 }
 
@@ -130,13 +130,16 @@ div.jjenglish:hover {
 
 .glyphicon-remove {
     float:right;
-    margin-right:-5px;
-    margin-top:-5px
+    margin-right:-3px;
+    margin-top:-16px;
+    color: #35a5e5;
+    cursor: pointer;
 }
 
 div.translatedWord {
     background-color: #35a5e5;
     border-radius: 5px;
     margin:5px;
-    padding: 3px;
+    padding: 5px;
+    color: white;
 }
