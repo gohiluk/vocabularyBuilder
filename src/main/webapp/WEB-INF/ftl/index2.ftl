@@ -29,7 +29,7 @@
 
 
 <div style="width:100%; height:46px; color:white">
-     <a href="http://localhost:8080"> <img src="<@spring.url '/resources/img/owl2.jpg'/>" style="width:35px; height:38px; margin-left:140px; margin-top:0px" /></a>
+     <a href="<@spring.url '/'/>"> <img src="<@spring.url '/resources/img/owl2.jpg'/>" style="width:35px; height:38px; margin-left:140px; margin-top:0px" /></a>
      <img src="<@spring.url '/resources/img/logo.png'/>" style="width:262px; height:40px; margin-left:30px; margin-top:3px" />
     <button id="showmenu" class="btn btn-success" style="height:46px; float:right; margin-top:0px; width:100px">Menu
     </button>
@@ -42,7 +42,7 @@ Double click on word which you want to translate
 <div class = "navbar navbar-default navbar-fixed-bottom color:#593F23">
 <div class = "container">
 <p class="navbar-text pull-left">About</p>
-<a href ="http://localhost:8080" class ="navbar-text pull-left">Contact</a>
+<a href="<@spring.url '/'/>" class ="navbar-text pull-left">Contact</a>
 </div>
 </div>
 
