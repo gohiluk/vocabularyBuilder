@@ -34,9 +34,9 @@
     </button>
 </div>
 
-<textarea id="textarea" spellcheck="false">
+<div id="textarea" spellcheck="false" contentEditable>
 Double click on word which you want to translate
-</textarea>
+</div>
 
 <@security.authorize access="hasRole('ROLE_USER')">
 <div class="jjenglish"></div>

@@ -41,8 +41,8 @@ $(document).ready(function() {
     };
 
     $("#textarea").mouseup(function(e) {
-        var selectionStart = $(this)[0].selectionStart;
-        var selectionEnd = $(this)[0].selectionEnd;
+        var selectionStart = window.getSelection().getRangeAt(0).startOffset;
+        var selectionEnd = window.getSelection().getRangeAt(0).endOffset;
 
         if (selectionStart !== selectionEnd) {
 
@@ -56,8 +56,8 @@ $(document).ready(function() {
             var positionX = $(this).position().left + 405; //500 polowa szerokosci textboxa
             var positionY =  e.pageY - 53; //46 wysokosc gornego diva
 
-            var wholeText = $(this).val();
-            translate(wholeText.substring(selectionStart,selectionEnd),  positionX, positionY);
+            var wholeText = window.getSelection().getRangeAt(0).toString();
+            translate(wholeText, positionX, positionY);
         }
     });
 
@@ -75,12 +75,10 @@ $(document).ready(function() {
 
     $("#textarea").on('paste', function() {
 
-        //http://
-
         var thiz = $(this);
 
         setTimeout(function () {
-            if (!(thiz.val().indexOf("http://") >= 0)) {
+            if (!(thiz.text().indexOf("http://") >= 0)) {
                 alert("nie znaleziono http");
                 fadeOutBubbleWithTimeout(0);
 
@@ -108,20 +106,23 @@ $(document).ready(function() {
                     beforeSend: function(xhr){
                         xhr.setRequestHeader(header, token);
                     },
-                    data: JSON.stringify({"url":thiz.val()}),
+                    data: JSON.stringify({"url":thiz.text()}),
                     success: function (data) {
-                        $("#textarea").val(data);
+
                         $("#textarea").animate({'top': '150px', 'margin-top': '0'}, "slow");
                         setTimeout(function () {
                             var h = ($(document).height() * 6) / 10;
                             $("#textarea").animate({'height': h}, "slow");
-                        }, 1000);
+                        }, 500);
                         setTimeout(function () {
                             $("#textarea").animate({'height': '60%'}, "slow");
-                        }, 1100);
+                        }, 600);
+                        setTimeout(function() {
+                            $("#textarea").html(data);
+                        }, 800);
                     },
                     error: function (data) {
-                        $("#textarea").val("Something went wrong. This feature is in a developing phase.");
+                        $("#textarea").text("Something went wrong. This feature is in a developing phase.");
                     }
                 });
             }

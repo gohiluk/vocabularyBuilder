@@ -42,7 +42,7 @@ $(document).ready(function() {
 });
 
 function prepareVocabulary() {
-    var wordsList = $("#textarea").val().split(" ");
+    var wordsList = $("#textarea").text().split(" ");
     var list = [];
     list = createCTList(wordsList, list);
     //filter;
@@ -81,7 +81,7 @@ function showButtons() {
     btnTwo.attr('disabled', 'disabled');
     btnThree.attr('disabled', 'disabled');
 
-    var text = $("#textarea").val();
+    var text = $("#textarea").text();
     var wordCount = text.split(" ").length;
 
     if (wordCount < 10) {
@@ -154,7 +154,7 @@ function createThreeTable(list) {
 function filterEmptyWords(list){
     var newArray = [];
     for (var i=0; i<list.length; i++) {
-        if (list[i].word !== "") {
+        if (list[i].text !== "" && (typeof list[i].text !== 'undefined') && list[i].text !=="\n" && list[i].text.length <50) {
             newArray.push(list[i]);
         }
     }
