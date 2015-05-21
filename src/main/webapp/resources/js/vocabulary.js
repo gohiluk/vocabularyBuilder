@@ -79,16 +79,16 @@ $(document).ready(function() {
 
         setTimeout(function () {
             if (!(thiz.text().indexOf("http://") >= 0)) {
-                alert("nie znaleziono http");
                 fadeOutBubbleWithTimeout(0);
 
-                $(this).animate({'top': '150px', 'margin-top': '0'}, "slow");
+                thiz.animate({'top': '150px', 'margin-top': '0'}, "slow");
                 setTimeout(function () {
                     var h = ($(document).height() * 6) / 10;
-                    $("#textarea").animate({'height': h}, "slow");
+                    thiz.animate({'height': h}, "slow");
                 }, 1000);
                 setTimeout(function () {
-                    $("#textarea").animate({'height': '60%'}, "slow");
+                    thiz.animate({'height': '60%'}, "slow");
+                    thiz.css({"max-height":"60%"});
                 }, 1100);
             } else { //magic now
 
