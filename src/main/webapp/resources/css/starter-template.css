@@ -13,6 +13,7 @@ html {
     margin-top: -50px;
     margin-left: -400px;
     width: 800px;
+    resize: none;
 
     overflow-y: scroll;
     background-color: white;
@@ -95,7 +96,7 @@ a:hover {
 
 div.dziubek {
     width:20px;
-    height:20px;
+    height:25px;
     position: fixed;
     background-size: cover;
     background-image: url('../img/dziubek.png');
@@ -105,7 +106,9 @@ div.dziubek {
 div.translatearea {
     background-color: white;
     position: fixed;
-    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.08em;
+    border-color: #35a5e5;
     padding: 20px 10px 10px 10px;
     display: none;
 }
@@ -139,9 +142,9 @@ div.jjenglish:hover {
 }
 
 div.translatedWord {
-    background-color: #35a5e5;
+    background-color: #white;
     border-radius: 5px;
     margin:5px;
     padding: 5px;
-    color: white;
+    color: black;
 }
