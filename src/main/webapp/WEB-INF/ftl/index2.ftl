@@ -35,6 +35,20 @@
     </button>
 </div>
 
+<div class="popover fade right in" role="tooltip" id="popover859000" style="top: 83px; left: 111px; display: block;"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><div class="arrow" style="top: 50%;"></div><div class="popover-content"><div class="bs-example">  
+    <div class="list-group">
+        <a href="#" class="list-group-item">
+            Documents <span class="glyphicon glyphicon-star"></span> 
+        </a>
+        <a href="#" class="list-group-item">
+            Article <span class="glyphicon glyphicon-star"></span> 
+        </a>
+         <a href="#" class="list-group-item">
+            Files <span class="glyphicon glyphicon-star"></span> 
+        </a>
+    </div>
+</div></div></div>
+
 <div id="textarea" spellcheck="false" contentEditable>
 Double click on word which you want to translate
 </div>
